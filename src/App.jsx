@@ -61,16 +61,7 @@ function App() {
                 }
             }
             else {
-                let localScreenValue = screenValue;
-                let bufer = cash;
-                let cashTypes = [100, 50, 20 , 10, 5, 1]
-                cashTypes.forEach(element => {
-                    
-                    while (localScreenValue >= element) {
-                        bufer = bufer + " " + element;
-                        localScreenValue = localScreenValue - element;
-                    }
-                });
+                countCash();
                 setScreenValue('Возьмите деньги')
                 setTimeout(function(){setScreenValue('')}, 1000)
                 setCash(bufer)
@@ -80,12 +71,10 @@ function App() {
         }
                 
     }   
-
-    const giveCashAgain = () => {
-        setScreenValue('Введите сумму')
-        setTimeout(function(){setScreenValue('')}, 1000)
-        let localScreenValue = screenValue;
-        let bufer = cash;
+    let localScreenValue = screenValue;
+    let bufer = cash;
+    const countCash = () => {
+        
         let cashTypes = [100, 50, 20 , 10, 5, 1]
         cashTypes.forEach(element => {
             
@@ -94,6 +83,12 @@ function App() {
                 localScreenValue = localScreenValue - element;
             }
         });
+    }
+
+    const giveCashAgain = () => {
+        setScreenValue('Введите сумму')
+        setTimeout(function(){setScreenValue('')}, 1000)
+        countCash();
         setCash(bufer)
         setTimeout(function(){setCash('')}, 1000)
         finish = !finish;
