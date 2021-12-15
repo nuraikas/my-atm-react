@@ -1,0 +1,92 @@
+.App {
+  text-align: center;
+  margin: 0 auto;
+  width: 500px;
+  height: 600px;
+  border-radius: 30px;
+
+  background-color: rgb(148, 146, 126);
+}
+
+
+.atm-body {
+  display: flex;
+  justify-content: center;
+  height: 300px;
+}
+
+.card_insert {
+  margin: 20px;
+}
+
+.card-img {
+  width: 150px;
+  height: 250px;
+}
+
+.card-img:hover {
+  margin-top: -30px;
+}
+
+.card-img.active {
+  display: none;
+}
+
+.screen {
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0 auto;
+  width: 350px;
+  height: 100px;
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 10px;
+  background: lavender;
+  font-family: 'Fira Sans';
+
+  transition: background-color 2s linear;
+}
+
+.keyboard {
+  margin: 20px;
+}
+
+.numbers button{
+  width: 50px;
+  padding: 15px;
+  border-radius: 10px;
+  font-family: 'Fira Sans';
+  background: lavender;
+}
+
+.cash {
+  width: 350px;
+  height: 50px;
+  border-style: solid;
+  border-width: 1px;
+  margin: 15px auto;
+  overflow-y: auto;
+
+  border-radius: 10px;
+  background: lavender;
+  font-family: 'Fira Sans';
+
+}
+
+.screenBtn {
+  display: none;
+}
+
+.screenBtn.active {
+  margin: 10px;
+  display: block;
+  border-radius: 5px;
+  width: 100px;
+  float: inherit;
+  font-family: 'Fira Sans';
+
+}
+
+.screen.disabled {
+  background-color: black;
+}
