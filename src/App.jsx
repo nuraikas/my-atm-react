@@ -71,20 +71,45 @@ function App() {
     let localScreenValue = screenValue;
     let bufer = cash;
     const countCash = () => {
-        let cashTypes = [100, 50, 20 , 10, 5, 1]
-        cashTypes.forEach(function() {
-            while (localScreenValue > 100) {
+        let cashTypes = [
+            {
+                type: 100,
+                number: 10
+            }, 
+            {
+                type: 50,
+                number: 10
+            }, 
+            {
+                type: 20,
+                number: 10
+            }, 
+            {
+                type: 10,
+                number: 10
+            }, 
+            {
+                type: 5,
+                number: 10
+            },
+            {
+                type: 1,
+                number: 10
+            }
+        ]
+        cashTypes.forEach(element => {
+            while (localScreenValue > 100 && element.number > 0) {
                 let randomNumber = Math.abs(Math.floor(Math.random() * 10 - 4));
-                console.log(randomNumber)
-                bufer = bufer + ' ' + cashTypes[randomNumber]
-                localScreenValue = localScreenValue - cashTypes[randomNumber];
-                console.log(localScreenValue)
+                bufer = bufer + ' ' + cashTypes[randomNumber].type
+                localScreenValue = localScreenValue - cashTypes[randomNumber].type;
+                cashTypes[randomNumber].number--;
             }
         });
         cashTypes.forEach(element => {
-            while (localScreenValue >= element) {
-                bufer = bufer + " " + element;
-                localScreenValue = localScreenValue - element;
+            while (localScreenValue >= element.type && element.number > 0) {
+                bufer = bufer + " " + element.type;
+                localScreenValue = localScreenValue - element.type;
+                element.number--;
             }
         });
     }
