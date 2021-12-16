@@ -95,3 +95,12 @@ h1 {
 .screen.disabled {
   background-color: black;
 }
+
+.takeBtn {
+  padding: 5px;
+  border-radius: 5px;
+  width: 150px;
+  float: inherit;
+  font-family: 'Fira Sans';
+
+}

@@ -64,7 +64,6 @@ function App() {
                 setScreenValue('Возьмите деньги')
                 setTimeout(function(){setScreenValue('')}, 1000)
                 setCash(bufer)
-                setTimeout(function(){setCash('')}, 2000)
                 finish = !finish;
             }
         }
@@ -74,7 +73,15 @@ function App() {
     let bufer = cash;
     const countCash = () => {
         let cashTypes = [100, 50, 20 , 10, 5, 1]
-
+        cashTypes.forEach(function() {
+            while (localScreenValue > 100) {
+                let randomNumber = Math.abs(Math.floor(Math.random() * 10 - 4));
+                console.log(randomNumber)
+                bufer = bufer + ' ' + cashTypes[randomNumber]
+                localScreenValue = localScreenValue - cashTypes[randomNumber];
+                console.log(localScreenValue)
+            }
+        });
         cashTypes.forEach(element => {
             while (localScreenValue >= element) {
                 bufer = bufer + " " + element;
@@ -91,8 +98,11 @@ function App() {
         setTimeout(function(){setScreenValue('')}, 1000)
         countCash();
         setCash(bufer)
-        setTimeout(function(){setCash('')}, 1000)
         finish = !finish;
+    }
+
+    const takeMoney = () => {
+        setCash('')
     }
 
   return (
@@ -132,6 +142,7 @@ function App() {
         </div>
         </div>
         <div className='cash'>{cash}</div>
+        <button className='takeBtn' onClick={takeMoney}>Забрать деньги</button>
     </div>
   );
 }
