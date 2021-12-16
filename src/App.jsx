@@ -28,6 +28,7 @@ function App() {
 
     const end = () => {
         cardStatus = false;
+        pin_status = false;
         setScreenValue('Заберите карту')
         setTimeout(function(){setScreenValue('')}, 2000)
         finish = false;
@@ -39,17 +40,16 @@ function App() {
             if (pin_status === false){
                 
                 if (screenValue==='1111') {
+                    count = 0;
                     pin_status = true;
                     setScreenValue('Введите сумму')
                     setTimeout(function(){setScreenValue('')}, 1000)
                 }
                 else {
                     if (count < 3){
-                        console.log(count)
                         setScreenValue('Неверный пин-код. Попробуйте ещё раз')
                         setTimeout(function(){setScreenValue('')}, 1000)
                         count = count + 1;
-                        console.log(count)
                     }
 
                     else {
@@ -57,7 +57,6 @@ function App() {
                         setTimeout(function(){setScreenValue('')}, 2000)
                         disableAtm = true;
                     }
-                    
                 }
             }
             else {
@@ -74,16 +73,18 @@ function App() {
     let localScreenValue = screenValue;
     let bufer = cash;
     const countCash = () => {
-        
         let cashTypes = [100, 50, 20 , 10, 5, 1]
+
         cashTypes.forEach(element => {
-            
             while (localScreenValue >= element) {
                 bufer = bufer + " " + element;
                 localScreenValue = localScreenValue - element;
             }
         });
     }
+
+
+    //console.log(Math.floor(Math.random() * 10));
 
     const giveCashAgain = () => {
         setScreenValue('Введите сумму')
