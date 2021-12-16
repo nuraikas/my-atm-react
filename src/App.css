@@ -6,7 +6,7 @@
   border-radius: 30px;
 
   background-color: rgb(148, 146, 126);
-  font-family: 'Fira Sans';
+  font-family: 'Ubuntu';
 }
 
 h1 {
@@ -47,7 +47,7 @@ h1 {
   border-width: 1px;
   border-radius: 10px;
   background: lavender;
-  font-family: 'Fira Sans';
+  font-family: 'Ubuntu';
 
   transition: background-color 2s linear;
 }
@@ -60,7 +60,7 @@ h1 {
   width: 50px;
   padding: 15px;
   border-radius: 10px;
-  font-family: 'Fira Sans';
+  font-family: 'Ubuntu';
   background: lavender;
 }
 
@@ -74,7 +74,7 @@ h1 {
 
   border-radius: 10px;
   background: lavender;
-  font-family: 'Fira Sans';
+  font-family: 'Ubuntu';
 
 }
 
@@ -88,7 +88,7 @@ h1 {
   border-radius: 5px;
   width: 100px;
   float: inherit;
-  font-family: 'Fira Sans';
+  font-family: 'Ubuntu';
 
 }
 
@@ -101,6 +101,6 @@ h1 {
   border-radius: 5px;
   width: 150px;
   float: inherit;
-  font-family: 'Fira Sans';
+  font-family: 'Ubuntu';
 
 }

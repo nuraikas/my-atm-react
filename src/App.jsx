@@ -62,7 +62,6 @@ function App() {
             else {
                 countCash();
                 setScreenValue('Возьмите деньги')
-                setTimeout(function(){setScreenValue('')}, 1000)
                 setCash(bufer)
                 finish = !finish;
             }
